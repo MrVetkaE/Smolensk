@@ -9,8 +9,8 @@
 :root {
   /* Warm sunrise palette extracted from the photo */
   --warm-orange:  #e8874a;
-  --warm-gold:    #d4a44c;
-  --warm-cream:   #f2deb8;
+  --warm-gold:    #f0c050;
+  --warm-cream:   #fff8e8;
   --warm-rose:    #c97b6e;
   --green-moss:   #5a7a3a;
   --green-bright: #7db84a;
@@ -20,8 +20,8 @@
   --stone-light:  #6a5848;
   --fog-pink:     rgba(220,160,120,0.18);
   --fog-warm:     rgba(240,180,100,0.12);
-  --glass:        rgba(20,14,10,0.78);
-  --glass-light:  rgba(30,20,14,0.62);
+  --glass:        rgba(12,8,5,0.88);
+  --glass-light:  rgba(18,12,8,0.75);
   --border-warm:  rgba(212,164,76,0.28);
   --border-glow:  rgba(232,135,74,0.55);
   --text-bright:  #f5e8d0;
@@ -126,8 +126,8 @@ nav::before {
 
 .nav-logo em {
   font-style: normal;
-  color: var(--warm-gold);
-  text-shadow: 0 0 14px rgba(212,164,76,0.7);
+  color: #ffe566;
+  text-shadow: 0 0 14px #ffcc00, 0 0 28px rgba(255,200,0,0.5);
 }
 
 .nav-links { display: flex; gap: 2px; list-style: none; }
@@ -143,6 +143,8 @@ nav::before {
   border: 1px solid transparent;
   transition: all 0.2s;
   position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav-links a:hover {
@@ -181,14 +183,23 @@ header {
 }
 
 .hero-eyebrow {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 9px;
-  color: var(--warm-orange);
+  color: #ffe566;
   text-transform: uppercase;
   margin-bottom: 22px;
-  text-shadow: 0 0 20px rgba(232,135,74,0.6);
+  text-shadow:
+    0 0 12px #ffcc00,
+    0 0 28px rgba(255,200,0,0.5),
+    0 2px 8px rgba(0,0,0,0.95),
+    0 4px 16px rgba(0,0,0,0.8);
   opacity: 0;
   animation: riseIn 1s 0.2s ease forwards;
+  background: rgba(0,0,0,0.35);
+  padding: 8px 24px;
+  border-top: 1px solid rgba(255,220,80,0.25);
+  border-bottom: 1px solid rgba(255,220,80,0.25);
+  backdrop-filter: blur(6px);
 }
 
 .hero-title {
@@ -200,23 +211,33 @@ header {
   color: var(--text-bright);
   text-transform: uppercase;
   text-shadow:
-    0 2px 0 rgba(0,0,0,0.9),
-    0 4px 20px rgba(0,0,0,0.7),
-    0 0 60px rgba(240,160,60,0.25);
+    0 2px 0 rgba(0,0,0,1),
+    0 4px 16px rgba(0,0,0,0.95),
+    0 8px 40px rgba(0,0,0,0.7),
+    0 0 60px rgba(240,160,60,0.2);
   opacity: 0;
   animation: riseIn 1.2s 0.35s ease forwards;
 }
 
 .hero-sub {
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(9px, 1.5vw, 13px);
-  letter-spacing: 14px;
-  color: var(--warm-gold);
+  font-style: normal;
+  font-size: clamp(9px, 1.5vw, 14px);
+  letter-spacing: 3px;
+  color: #ffe566;
   text-transform: uppercase;
   margin-top: 14px;
-  text-shadow: 0 0 20px rgba(212,164,76,0.5);
+  text-shadow:
+    0 0 12px #ffcc00,
+    0 0 28px rgba(255,200,0,0.5),
+    0 2px 8px rgba(0,0,0,0.95);
   opacity: 0;
   animation: riseIn 1s 0.6s ease forwards;
+  background: rgba(0,0,0,0.35);
+  padding: 8px 24px;
+  border-top: 1px solid rgba(255,220,80,0.25);
+  border-bottom: 1px solid rgba(255,220,80,0.25);
+  backdrop-filter: blur(6px);
 }
 
 /* minecraft-style divider with grass blocks */
@@ -312,9 +333,9 @@ header {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 5px;
-  color: var(--warm-gold);
+  color: #ffe566;
   text-transform: uppercase;
-  text-shadow: 0 0 16px rgba(212,164,76,0.45);
+  text-shadow: 0 0 12px #ffcc00, 0 0 28px rgba(255,200,0,0.5), 0 1px 4px rgba(0,0,0,0.8);
   white-space: nowrap;
 }
 
@@ -329,11 +350,11 @@ header {
 .panel {
   position: relative;
   margin-bottom: 40px;
-  background: var(--glass);
+  background: rgba(10,6,4,0.9);
   border: 2px solid var(--border-warm);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  overflow: visible;
 }
 
 /* top golden line */
@@ -382,13 +403,14 @@ header {
 .about-text {
   font-size: 15px;
   line-height: 2.1;
-  color: var(--text-mid);
+  color: var(--text-bright);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
 }
 
 .about-text strong {
-  color: var(--warm-cream);
+  color: var(--warm-gold);
   font-weight: normal;
-  text-shadow: 0 0 10px rgba(242,222,184,0.3);
+  text-shadow: 0 0 12px rgba(212,164,76,0.5), 0 1px 4px rgba(0,0,0,0.9);
 }
 
 /* ══════════════════════════════
@@ -402,7 +424,7 @@ header {
 @media (max-width: 560px) { .coords-grid { grid-template-columns: 1fr; } }
 
 .coord-card {
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.55);
   border: 1px solid var(--border-warm);
   padding: 22px 20px 58px;
   position: relative;
@@ -437,7 +459,7 @@ header {
   font-size: clamp(13px, 2.2vw, 19px);
   color: var(--warm-cream);
   letter-spacing: 2px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(242,222,184,0.15);
 }
 
 .coord-sub {
@@ -489,7 +511,7 @@ header {
 /* ══════════════════════════════
    MEMBERS
 ══════════════════════════════ */
-.member-list { display: flex; flex-direction: column; gap: 3px; }
+.member-list { display: flex; flex-direction: column; gap: 22px; padding-top: 16px; }
 
 .member-row {
   display: flex;
@@ -501,6 +523,7 @@ header {
   transition: all 0.18s;
   opacity: 0;
   animation: rowIn 0.4s ease forwards;
+  overflow: visible;
 }
 
 @keyframes rowIn {
@@ -573,29 +596,181 @@ header {
 .member-name {
   font-family: 'Share Tech Mono', monospace;
   font-size: 13px;
-  color: var(--text-mid);
+  color: var(--text-bright);
   letter-spacing: 1px;
   flex: 1;
   transition: color 0.18s;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
-.member-row:hover .member-name { color: var(--text-bright); }
+.member-row:hover .member-name { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 1px 4px rgba(0,0,0,0.8); }
 
 .member-row.leader .member-name {
   font-family: 'Cinzel', serif;
   font-weight: 600;
   font-size: 15px;
-  color: var(--warm-gold);
-  text-shadow: 0 0 18px rgba(212,164,76,0.5), 0 0 36px rgba(212,164,76,0.2);
+  color: #ffe566;
+  text-shadow: 0 0 10px #ffcc00, 0 0 24px rgba(255,200,0,0.6), 0 1px 4px rgba(0,0,0,0.9);
   letter-spacing: 4px;
 }
 
 .member-role {
   font-size: 8px;
   letter-spacing: 3px;
-  color: var(--text-dim);
+  color: rgba(245,232,208,0.65);
   text-transform: uppercase;
   padding-right: 110px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.creator-badge {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: rgba(255,229,102,0.7);
+  text-shadow: 0 0 8px rgba(255,200,0,0.4);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.creator-badge::before { content: '·'; font-size: 10px; opacity: 0.6; margin-bottom: 2px; }
+.creator-badge::after { content: '·'; font-size: 10px; opacity: 0.6; margin-top: 2px; }
+
+/* DEPUTY */
+.member-row.deputy {
+  background: linear-gradient(90deg, rgba(100,160,220,0.1) 0%, rgba(100,160,220,0.03) 50%, transparent 100%);
+  border: 1px solid rgba(100,160,220,0.3);
+}
+.member-row.deputy:hover {
+  background: linear-gradient(90deg, rgba(100,160,220,0.18) 0%, rgba(100,160,220,0.07) 50%, transparent 100%);
+  border-color: rgba(100,160,220,0.55);
+}
+.member-row.deputy .leader-bar {
+  background: linear-gradient(180deg, #a0d0ff, #3060a0);
+  box-shadow: 0 0 10px #60a0e0, 0 0 22px rgba(100,160,220,0.4);
+}
+.member-row.deputy .member-num {
+  color: #80c0ff;
+  text-shadow: 0 0 8px rgba(100,160,220,0.5);
+}
+.member-row.deputy .member-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #90c8ff;
+  text-shadow: 0 0 14px rgba(100,160,220,0.5);
+  letter-spacing: 3px;
+}
+.deputy-badge {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #80c0ff;
+  text-shadow: 0 0 12px rgba(100,160,220,0.8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.deputy-badge::before, .deputy-badge::after { content: '◈'; font-size: 7px; opacity: 0.8; }
+
+.prostachok-badge {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #c080ff;
+  text-shadow: 0 0 12px rgba(176,106,255,0.8), 0 0 24px rgba(176,106,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.prostachok-badge::before, .prostachok-badge::after { content: '✦'; font-size: 7px; opacity: 0.8; }
+
+/* DEPUTY */
+.member-row.deputy {
+  background: linear-gradient(90deg, rgba(100,160,220,0.1) 0%, rgba(100,160,220,0.03) 50%, transparent 100%);
+  border: 1px solid rgba(100,160,220,0.3);
+}
+.member-row.deputy:hover {
+  background: linear-gradient(90deg, rgba(100,160,220,0.18) 0%, rgba(100,160,220,0.07) 50%, transparent 100%);
+  border-color: rgba(100,160,220,0.55);
+}
+.member-row.deputy .leader-bar {
+  background: linear-gradient(180deg, #a0d0ff, #4080c0);
+  box-shadow: 0 0 10px #60a0e0, 0 0 22px rgba(100,160,220,0.4);
+}
+.member-row.deputy .member-num {
+  color: #80c0ff;
+  text-shadow: 0 0 8px rgba(100,160,220,0.5);
+}
+.member-row.deputy .member-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #a0d0ff;
+  text-shadow: 0 0 14px rgba(100,160,220,0.5);
+  letter-spacing: 3px;
+}
+.deputy-badge {
+  position: absolute;
+  right: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #80c0ff;
+  text-shadow: 0 0 12px rgba(100,160,220,0.8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.deputy-badge::before, .deputy-badge::after { content: '✦'; font-size: 7px; opacity: 0.75; }
+
+.row-crown {
+  position: absolute;
+  top: -22px;
+  left: 14px;
+  transform: none;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 5;
+  pointer-events: none;
+  transform-origin: top center;
+  animation: crownSwing 3s ease-in-out infinite;
+}
+
+.member-row.leader .row-crown { animation-delay: 0s; }
+.member-row.prostachok .row-crown { animation-delay: 0.5s; }
+
+@keyframes crownSwing {
+  0%   { transform: rotate(-8deg); }
+  25%  { transform: rotate(0deg); }
+  50%  { transform: rotate(8deg); }
+  75%  { transform: rotate(0deg); }
+  100% { transform: rotate(-8deg); }
+}
+
+.gold-crown {
+  filter: drop-shadow(0 0 6px #ffcc00) drop-shadow(0 0 14px rgba(255,200,0,0.7));
+}
+
+.purple-crown {
+  filter: drop-shadow(0 0 6px #b06aff) drop-shadow(0 0 14px rgba(176,106,255,0.7)) hue-rotate(260deg) saturate(2.5);
 }
 
 /* CO-LEADER */
@@ -750,8 +925,8 @@ footer {
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 6px;
-  color: var(--warm-gold);
-  text-shadow: 0 0 14px rgba(212,164,76,0.6), 0 0 30px rgba(212,164,76,0.25);
+  color: #ffe566;
+  text-shadow: 0 0 14px #ffcc00, 0 0 30px rgba(255,200,0,0.5);
   text-transform: uppercase;
 }
 
@@ -800,16 +975,16 @@ body::after {
 <nav>
   <div class="nav-logo">СМ <em>·</em> Движения</div>
   <ul class="nav-links">
-    <li><a href="#about" class="active" onclick="scrollTo2('about',event)">О клане</a></li>
-    <li><a href="#coords" onclick="scrollTo2('coords',event)">Координаты</a></li>
-    <li><a href="#members" onclick="scrollTo2('members',event)">Участники</a></li>
+    <li><a class="active" onclick="scrollTo2('about')">О клане</a></li>
+    <li><a onclick="scrollTo2('coords')">Координаты</a></li>
+    <li><a onclick="scrollTo2('members')">Участники</a></li>
   </ul>
 </nav>
 
 <header>
-  <div class="hero-eyebrow">Minecraft Clan &nbsp;·&nbsp; Est. 2024</div>
+  <div class="hero-eyebrow">Лучший клан &nbsp;·&nbsp; 2026</div>
   <div class="hero-title">Смоленские<br>Движения</div>
-  <div class="hero-sub">S &nbsp; M &nbsp; O &nbsp; L &nbsp; E &nbsp; N &nbsp; S &nbsp; K</div>
+  <div class="hero-sub">breadland.fun</div>
   <div class="hero-ornament">
     <div class="orn-line"></div>
     <!-- pixelated grass block SVG -->
@@ -935,10 +1110,10 @@ body::after {
 
 <script>
 const members = [
-  { name: 'MrBetka',          role: 'Лидер',     leader: true },
+  { name: 'MrBetka',          role: 'Лидер',     leader: true, creator: true },
+  { name: 'pRost4k',          role: 'Легенда', legend: true },
   { name: 'toxisss_',         role: 'Глава', coleader: true },
-  { name: 'z_svin',           role: 'Глава', coleader: true },
-  { name: 'pRost4k',          role: 'Простачок' },
+  { name: 'z_svin',           role: 'Зам', deputy: true },
   { name: 'yaFeezmen',        role: 'Участник' },
   { name: 'M1Kekus',          role: 'Участник' },
   { name: 'skilled_knight',   role: 'Участник' },
@@ -960,11 +1135,12 @@ members.forEach((m, i) => {
   let cls = 'member-row';
   if (m.leader) cls += ' leader';
   if (m.coleader) cls += ' coleader';
-  if (m.role === 'Простачок') cls += ' prostachok';
+  if (m.deputy) cls += ' deputy';
+  if (m.role === 'Легенда') cls += ' prostachok';
   row.className = cls;
   row.style.animationDelay = (i * 0.05) + 's';
 
-  if (m.leader || m.coleader || m.role === 'Простачок') {
+  if (m.leader || m.coleader || m.deputy || m.role === 'Легенда') {
     const bar = document.createElement('div');
     bar.className = 'leader-bar';
     row.appendChild(bar);
@@ -986,31 +1162,51 @@ members.forEach((m, i) => {
   row.appendChild(name);
 
   if (m.leader) {
-    const badge = document.createElement('div');
-    badge.className = 'leader-badge';
-    badge.textContent = 'ЛИДЕР';
-    row.appendChild(badge);
+    if (m.creator) {
+      const cbadge = document.createElement('div');
+      cbadge.className = 'creator-badge';
+      cbadge.innerHTML = 'создатель<br>сайта';
+      row.appendChild(cbadge);
+    }
   } else if (m.coleader) {
     const badge = document.createElement('div');
     badge.className = 'leader-badge';
     badge.textContent = 'ГЛАВА';
     row.appendChild(badge);
+  } else if (m.deputy) {
+    const badge = document.createElement('div');
+    badge.className = 'deputy-badge';
+    badge.textContent = 'ЗАМ';
+    row.appendChild(badge);
   } else {
     const role = document.createElement('div');
-    role.className = m.role === 'Простачок' ? 'role-prostachok' : 'member-role';
-    role.textContent = m.role;
+    if (m.legend) {
+      role.className = 'leader-badge prostachok-badge';
+      role.textContent = 'ЛЕГЕНДА';
+    } else {
+      role.className = m.role === 'Легенда' ? 'role-prostachok' : 'member-role';
+      role.textContent = m.role;
+    }
     row.appendChild(role);
+  }
+
+  if (m.leader || m.legend) {
+    const crown = document.createElement('div');
+    crown.className = m.leader ? 'row-crown gold-crown' : 'row-crown purple-crown';
+    crown.textContent = '👑';
+    row.appendChild(crown);
   }
 
   list.appendChild(row);
 });
 
-function scrollTo2(id, e) {
-  e.preventDefault();
+function scrollTo2(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const offset = el.getBoundingClientRect().top + window.scrollY - 72;
   window.scrollTo({ top: offset, behavior: 'smooth' });
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.querySelector(`.nav-links a[onclick*="${id}"]`).classList.add('active');
 }
 
 // Nav active on scroll
